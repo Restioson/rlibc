@@ -26,11 +26,15 @@
 // LLVM to optimize these function calls to themselves!
 #![no_builtins]
 
+// For use with custom `core` crates, disable core and depend on it
+#![feature(no_core)]
+
 // NOTE `linkage = weak` doesn't work for Windows (COFF) or MacOS (MachO). It seems it only works
 // for ELF objects.
 #![cfg_attr(all(feature = "weak", not(windows), not(target_os = "macos")), feature(linkage))]
 
 #[cfg_attr(all(feature = "weak", not(windows), not(target_os = "macos")), linkage = "weak")]
+
 #[no_mangle]
 pub unsafe extern fn memcpy(dest: *mut u8, src: *const u8,
                             n: usize) -> *mut u8 {

@@ -14,5 +14,8 @@ environments where another libc does not exist, since rustc may
 implicitly insert calls to such functions.
 """
 
+[dependencies.core]
+path = "../libcore"
+
 [features]
 weak = []
