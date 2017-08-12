@@ -7,12 +7,17 @@ will be required to link correctly.
 
 ## Usage
 
+Add this to your git submodules:
+```
+git submodule add https://github.com/Restioson/rlibc.git
+```
+
 Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
 
-rlibc = "1.0"
+rlibc = { path = "rlibc/" }
 ```
 
 And add this to your crate root:
@@ -20,6 +25,8 @@ And add this to your crate root:
 ```rust
 extern crate rlibc;
 ```
+
+Make sure you have a `core` crate in `../libcore`.
 
 ---
 
