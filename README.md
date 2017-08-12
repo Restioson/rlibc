@@ -20,3 +20,7 @@ And add this to your crate root:
 ```rust
 extern crate rlibc;
 ```
+
+---
+
+This fork make `rlibc` depend on an external `core` crate in `../libcore`. Forked for use with AVR-Rust.
